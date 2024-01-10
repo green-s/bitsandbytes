@@ -8,6 +8,7 @@ import os
 from setuptools import find_packages, setup
 
 libs = list(glob.glob("./bitsandbytes/libbitsandbytes*.so"))
+libs += list(glob.glob("./bitsandbytes/libbitsandbytes*.dll"))
 libs = [os.path.basename(p) for p in libs]
 print("libs:", libs)
 
@@ -18,7 +19,7 @@ def read(fname):
 
 setup(
     name=f"bitsandbytes",
-    version=f"0.41.2",
+    version=f"0.41.3.post1",
     author="Tim Dettmers",
     author_email="dettmers@cs.washington.edu",
     description="k-bit optimizers and matrix multiplication routines.",
